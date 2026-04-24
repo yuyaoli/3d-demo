@@ -2,10 +2,11 @@ import { Suspense, useMemo, useState } from 'react'
 import { OrbitControls, Stage, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import type { Mesh } from 'three'
-import modelUrl from '../data/test2_compressed.glb?url'
 import { ModelRenderer } from './components/ModelRenderer.tsx'
 import { ShapeKeyControls } from './components/ShapeKeyControls.tsx'
 import './App.css'
+
+const modelUrl = '/models/base_model.glb'
 
 useGLTF.preload(modelUrl)
 
