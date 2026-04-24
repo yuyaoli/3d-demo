@@ -1,5 +1,5 @@
 import { Suspense, useMemo, useState } from 'react'
-import { OrbitControls, Stage, useGLTF } from '@react-three/drei'
+import { Environment, OrbitControls, Stage, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import type { Mesh } from 'three'
 import { ModelRenderer } from './components/ModelRenderer.tsx'
@@ -51,9 +51,11 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <color attach="background" args={['#f5efea']} />
           <Suspense fallback={null}>
+            <Environment files="/hdri/env.hdr" />
             <Stage
               adjustCamera={false}
               center={{ disable: true }}
+              environment={null}
               intensity={0.7}
               preset="soft"
             >
