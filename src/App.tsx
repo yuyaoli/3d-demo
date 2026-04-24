@@ -51,11 +51,23 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <color attach="background" args={['#f5efea']} />
           <Suspense fallback={null}>
-            <Stage adjustCamera={false} intensity={0.7} preset="soft">
+            <Stage
+              adjustCamera={false}
+              center={{ disable: true }}
+              intensity={0.7}
+              preset="soft"
+            >
               <ModelRenderer scene={scene} values={values} />
             </Stage>
           </Suspense>
-          <OrbitControls makeDefault />
+          <OrbitControls
+            makeDefault
+            enableDamping
+            dampingFactor={0.05}
+            rotateSpeed={0.5}
+            zoomSpeed={0.6}
+            panSpeed={0.5}
+          />
         </Canvas>
       </div>
     </div>
