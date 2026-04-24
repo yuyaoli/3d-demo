@@ -50,7 +50,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <color attach="background" args={['#f5efea']} />
           <Suspense fallback={null}>
-            <Stage adjustCamera intensity={0.7} preset="soft">
+            <Stage adjustCamera={false} intensity={0.7} preset="soft">
               <ModelRenderer scene={scene} values={values} />
             </Stage>
           </Suspense>
